@@ -1,4 +1,5 @@
 actions :auto_attach
+
 default_action :auto_attach
 
 state_attrs :aws_access_key,
@@ -13,9 +14,7 @@ state_attrs :aws_access_key,
             :mount_point_group,
             :mount_point_mode,
             :mount_point_owner,
-            :snapshots,
-            :disk_encrypted,
-            :disk_kms_key_id
+            :snapshots
 
 attribute :aws_access_key,        kind_of: String
 attribute :aws_secret_access_key, kind_of: String
@@ -33,5 +32,3 @@ attribute :snapshots,             default: []
 attribute :disk_type,             kind_of: String, default: 'standard'
 attribute :disk_piops,            kind_of: Integer, default: 0
 attribute :existing_raid,         kind_of: [TrueClass, FalseClass]
-attribute :disk_encrypted,        kind_of: [TrueClass, FalseClass], default: false
-attribute :disk_kms_key_id,       kind_of: String

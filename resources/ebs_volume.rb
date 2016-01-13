@@ -1,5 +1,4 @@
 actions :create, :attach, :detach, :snapshot, :prune
-default_action :create
 
 state_attrs :availability_zone,
             :aws_access_key,
@@ -33,3 +32,8 @@ attribute :piops,                 kind_of: Integer, default: 0
 attribute :encrypted,             kind_of: [TrueClass, FalseClass], default: false
 attribute :kms_key_id,            kind_of: String
 attribute :delete_on_termination, kind_of: [TrueClass, FalseClass], default: nil
+
+def initialize(*args)
+  super
+  @action = :create
+end

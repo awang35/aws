@@ -1,5 +1,9 @@
+def initialize(*args)
+  super
+  @action = :update
+end
+
 actions :add, :update, :remove, :force_remove
-default_action :update
 
 state_attrs :aws_access_key,
             :resource_id,

@@ -1,5 +1,9 @@
+def initialize(*args)
+  super
+  @action = :enable
+end
+
 actions :enable, :disable
-default_action :enable
 
 state_attrs :aws_access_key
 
